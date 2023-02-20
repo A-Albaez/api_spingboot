@@ -49,12 +49,11 @@ public class ProductosDB {
         int resultado = 0;
         PreparedStatement ps;
         try {
-            ps = cn.prepareStatement( "CALL InsertarProductos(?,?,?,?,?)");
+            ps = cn.prepareStatement( "CALL InsertarProductos(?,?,?,?)");
             ps.setString(1,producto.getNombre());
             ps.setFloat(2, producto.getPrecio());
             ps.setString(3, producto.getCategoria());
             ps.setString(4, producto.getFoto());
-            ps.setInt(5, producto.getId());
 
             resultado = ps.executeUpdate();
             ps.close();
